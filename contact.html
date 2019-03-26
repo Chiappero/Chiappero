@@ -80,7 +80,7 @@
         </section>
         <!--================End Home Banner Area =================-->
         
-        <!--================Contact Area =================-->
+        <!--================TODO: free Google map api key Contact Area =================-->
         <section class="contact_area p_120">
             <div class="container">
                 <div id="mapBox" class="mapBox" 
@@ -114,6 +114,7 @@
                     <div class="col-lg-9">
                         <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
                             <div class="col-md-6">
+                                
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
                                 </div>
@@ -125,6 +126,10 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="security" name="security" placeholder="Security CAPTCHA">
+                                </div>
+                                <div class="form-group">
+                                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                                <input type="hidden" name="action" value="validate_captcha">
                                 </div>
                             </div>
                             
@@ -162,19 +167,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         			</div>
         			<div class="col-lg-5 col-sm-6">
         				<aside class="f_widget news_widget">
-        					<div class="f_title">
-        						<h3>Newsletter</h3>
-        					</div>
-        					<p>Stay updated with our latest trends</p>
-        					<div id="mc_embed_signup">
-                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
-                                	<div class="input-group d-flex flex-row">
-                                        <input name="EMAIL" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
-                                        <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>		
-                                    </div>				
-                                    <div class="mt-10 info"></div>
-                                </form>
-                            </div>
+        					
         				</aside>
         			</div>
         			<div class="col-lg-2">
@@ -249,6 +242,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <!-- contact js -->
         <script src="js/jquery.form.js"></script>
         <script src="js/jquery.validate.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LdaMJoUAAAAAEVDadWhE6Ce_crQyiRKWwCRPpu_"></script>
+          <script>
+          grecaptcha.ready(function() {
+              grecaptcha.execute('6LdaMJoUAAAAAEVDadWhE6Ce_crQyiRKWwCRPpu_', {action: 'validate_captcha'}).then(function(token) {
+                             document.getElementById('g-recaptcha-response').value = token;
+              });
+          });
+          </script>
         <script src="js/contact.js"></script>
         <!--gmaps Js-->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
