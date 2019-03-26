@@ -1,0 +1,261 @@
+Delivered-To: fabien.chiappero@jmc-aixmarseille.fr
+Received: by 2002:a92:7e81:0:0:0:0:0 with SMTP id q1csp2087426ill;
+        Mon, 25 Mar 2019 02:48:51 -0700 (PDT)
+X-Received: by 2002:a24:2c48:: with SMTP id i69mr7907101iti.161.1553507331612;
+        Mon, 25 Mar 2019 02:48:51 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1553507331; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=I42F9cIoHj6sGx384ZlB6taHVQYN9pIXjE+o86zuVLG3B7vYEyChhRsmD55Ix0lwwL
+         rfFVZDCV8Xz7+JCkBCb8jOJsUxiFP2ZAxkq4mcUPhrDepDSBuJbsQsPQVyTmCCDITifE
+         h1mdi0Rkr7V64GAtA9+r1nFKfytw3ijyJT6MCVQbBjAogkYgPrT14f+5eB297Tomb1wm
+         Z4g71Gn13eoACOi7/9xxdxRPWo2Ueg3UMGtGS86vhSN6GMPh6IratA84KcvHuSckWp1a
+         FeMMRVyUGgvWQsbWl9qsmQOERm0FZ3phOgZmylfImGb0lfrVz3QmwuLqXbu+FXrHbMW5
+         PTug==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:to:subject:message-id:date:from
+         :mime-version:dkim-signature;
+        bh=LTb6NX/+uYfQjxtGDwIjMQNUDdfwXYbljGDeQ6t1cko=;
+        b=Fr2D/M+e4cheAIgGiluKPpXTWJx3P+tAnaYEI6lQrsxvvaGmLVdpAVPA/8Y7avPSPM
+         CSh0U0h1+S1Ol4jvsqMtsTF3Iv5ruHFV1X+y/k2tklnjPTV+Mc1DYuSiOzyJpUpiOdN3
+         mso95bLEdGOuiAbBaW3REKaq4T445inPo7txUv35IphsLKR6Bfm6U6dgnQVBIBwdAu77
+         5hfZTmEG9Py5//2GzySTxhQuZyd8l0BtGebeB/8mhFCM1vgWX9xirfxtOuYkkEjJqBPu
+         7ixR7VItU4YhJxO40rXp61dmuTqe7TJS95ygUKHtO0BcKDa+naz2AwuXAMyJBBAOgeMk
+         +oHA==
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@jmc-aixmarseille.fr header.s=google header.b=VWikaFQy;
+       arc=pass (i=2 spf=pass spfdomain=jmc-aixmarseille.fr dkim=pass dkdomain=jmc-aixmarseille.fr);
+       spf=pass (google.com: domain of business+bncbcgzfle2tqirba6i4lsakgqe2u6htqa@jmc-aixmarseille.fr designates 209.85.220.69 as permitted sender) smtp.mailfrom=business+bncBCGZFLE2TQIRBA6I4LSAKGQE2U6HTQA@jmc-aixmarseille.fr
+Return-Path: <business+bncBCGZFLE2TQIRBA6I4LSAKGQE2U6HTQA@jmc-aixmarseille.fr>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id b21sor5156737iof.110.2019.03.25.02.48.51
+        for <fabien.chiappero@jmc-aixmarseille.fr>
+        (Google Transport Security);
+        Mon, 25 Mar 2019 02:48:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of business+bncbcgzfle2tqirba6i4lsakgqe2u6htqa@jmc-aixmarseille.fr designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@jmc-aixmarseille.fr header.s=google header.b=VWikaFQy;
+       arc=pass (i=2 spf=pass spfdomain=jmc-aixmarseille.fr dkim=pass dkdomain=jmc-aixmarseille.fr);
+       spf=pass (google.com: domain of business+bncbcgzfle2tqirba6i4lsakgqe2u6htqa@jmc-aixmarseille.fr designates 209.85.220.69 as permitted sender) smtp.mailfrom=business+bncBCGZFLE2TQIRBA6I4LSAKGQE2U6HTQA@jmc-aixmarseille.fr
+ARC-Seal: i=2; a=rsa-sha256; t=1553507331; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=L/NWgqfYuq80Ldn+V3TOCRV7B08b9LZcUoVgfAihF6WNgJ712ziRBJcO94x2qWxzZK
+         tn+wW5+cyO9HGbnyMU1oa+ElCaev2aPQTlM18tH+gyPsQheL/tWnAy3o1OI7UBmmAm9l
+         N262OEjS5BnCcq3ohWf5l5qpJ1UBB6Oar+Vb/2WN8RPV+SL9WJ/2gYxsnhTyrmHFk8cB
+         ryHq/LnA1mPHrTCgY16Nb+zFedoUNJeiNKEw0dolXsvRnu5UFnFwYJ0AjqHSdgVKXgcO
+         OQusp7w0/VZKJJi7bIoN2xucyXbkleuBKcRxCxKqqv4JBEC1j4q4XEc3KJHBdsOOi7RF
+         wimw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:to:subject:message-id:date:from
+         :mime-version:dkim-signature;
+        bh=LTb6NX/+uYfQjxtGDwIjMQNUDdfwXYbljGDeQ6t1cko=;
+        b=SgoVWabXiEle4Ew1WOv9NdrqIPuXpWXqyXUjP27xMLXlojWUAYpArhS97YPx1iHynG
+         L2PLoSd5xNjJiSd/zSLz3e6xd3rGfmugTONuMl5DiPRMzIU2D9a3el88Bl19TvL9Y79Z
+         ddtk5MRnZjrvbLyhOdU1PgrMwGJBlHufCPkFm2g5DJ/aIxxm1y1gvO+u1V24j+sitxVH
+         qPog06unVVjhefZadnwwwLrofbZtc3qIMsaQbmcf3CEGjb1Cj/EeypMdgWhfzGM5KIaU
+         VzTnMV1w4xrOyu/L5JMw5o/28GE5IyCDNWRoquYVumbb9YSt08t5KZ9dOLDwXJaa7WPe
+         QDkA==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@jmc-aixmarseille.fr header.s=google header.b=DC5AjfL0;
+       spf=pass (google.com: domain of lucas.horri@jmc-aixmarseille.fr designates 209.85.220.41 as permitted sender) smtp.mailfrom=lucas.horri@jmc-aixmarseille.fr
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=jmc-aixmarseille.fr; s=google;
+        h=mime-version:from:date:message-id:subject:to:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :list-post:list-help:list-archive:list-unsubscribe;
+        bh=LTb6NX/+uYfQjxtGDwIjMQNUDdfwXYbljGDeQ6t1cko=;
+        b=VWikaFQyFx8CwU0t1C/RQ8xMkl//U75wJgl0kCHwc1lhpi5wp4orFgAVc0blFdSMlA
+         7Ro+HSyw1ur1DMjPvG3P64S+/yYuyjSjlJp7uf0na3RbtWjhFLTB1YstlQOrWUN4l3Iv
+         Lzr7DMQyy/CvRqsphJr3DEBpR91d2AYRIoK8E=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to
+         :x-original-sender:x-original-authentication-results:precedence
+         :mailing-list:list-id:x-spam-checked-in-group:list-post:list-help
+         :list-archive:list-unsubscribe;
+        bh=LTb6NX/+uYfQjxtGDwIjMQNUDdfwXYbljGDeQ6t1cko=;
+        b=sDUDgWYq9IxosRe4c8vXawdNWuDUkUa0zaNn4xUEIcg2djfXgn0DhO3WgcECHe1vXY
+         EEN48e/hvsFy3VsIbQ30/aDCyl9zPHEvhZFrXyVDQfJvsL2WbqsXZWwXhFZjbHo/mKhT
+         sKUTn0aeKE9qMJr1TBoZvT9+K3u9/xtzyPOsAPUPukeLcqemW0hxfKqXZ9YtqOMrku4H
+         g1wDvIFkx+a6KAPYabNP+4Eu8PqSgUg3Fdklr2Ll3Nbpaq2fld3S9R5w9sf+tV7Hv6Oo
+         ExS2N5Tj8TLb2CBLkNJ7c8xJR0Mfsn+fkfbtnS4TGjwinHQowv7CrCMJBVw9sodHEwUM
+         wNQw==
+X-Gm-Message-State: APjAAAWZh0x36//M5r0lC9UwPoWbC9nn/pkrPqv09PXEOq1JSD7r5Je/
+	DJ14w5pk6bOJx69ojaM7LgdC8D88
+X-Google-Smtp-Source: APXvYqxpxumfEA+QZlZJ5RDfnDP97h1dSZY/EBMlh5kU2veQk60/5TQ5VmGr5XczbHYkPtzVsr+NVg==
+X-Received: by 2002:a6b:e61a:: with SMTP id g26mr16253532ioh.105.1553507331435;
+        Mon, 25 Mar 2019 02:48:51 -0700 (PDT)
+X-BeenThere: business@jmc-aixmarseille.fr
+Received: by 2002:a24:5a0a:: with SMTP id v10ls4441831ita.2.gmail; Mon, 25 Mar
+ 2019 02:48:51 -0700 (PDT)
+X-Received: by 2002:a24:2441:: with SMTP id f62mr6837607ita.155.1553507331041;
+        Mon, 25 Mar 2019 02:48:51 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1553507331; cv=none;
+        d=google.com; s=arc-20160816;
+        b=QvU/NXHwou1KCdr3LgTn8Nevl+rxo9VKCDPoeHcMG/Re4sIzi9vwQ+EIyA2lbYPc8/
+         wEcJx1HQqI7uH9koS2epPgkthb1P/UVX1WSTUqBBmKszO8Ow1vYAAuVC9v0encfngo3f
+         Zlh4QPhr5BWHpbsyDsf1h5IfMQjwozVBV62dqWBex7IXWdjJdDzLEuHfRnBvTtxIYciQ
+         LVabvSk0dJuV7uKWjBap6pjPFgvqyyMQRua8YRMp6sTjeiDwt8qN/8dBmKpz4GHIcdTe
+         Sdf+1Rde6vkWgXdUAaFl+zZOiHCfMj6ZzpZOsFv6WvikzJMrQ6p1kzRfwIXggwIDJxjN
+         Jb5A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=LTb6NX/+uYfQjxtGDwIjMQNUDdfwXYbljGDeQ6t1cko=;
+        b=f9Ro4nzajTafTvq9eIsv5hedNXkcl8OMvNcG5xUGxYyL3o/EZ52E/h2Y39Ei6y8xt2
+         77BV7nK2XBKmC4Ertkld2SAIOr7pSxfec9bmppkcAE/ds2X1hSHqjZ6yzZnek3pxmkOG
+         /llkU1FvJURE89WdyQHib63MEQ5rPweft5AoatywT55n0bwqfeOpCCM+nxQ4jk6wCQpB
+         Xrhp/PkSNxz4G2YMEFXSJmYcFnbxVaXDZM22zQKbjKzimyOwPuJkdKXkFEbrgIDPoXOL
+         uJI9J1RKaLHOJO6IBSLdU64dV8s5qf+LYhYk2Kpj/8sRASZkmkmHcJVNR/beZW+4o/74
+         hXtQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@jmc-aixmarseille.fr header.s=google header.b=DC5AjfL0;
+       spf=pass (google.com: domain of lucas.horri@jmc-aixmarseille.fr designates 209.85.220.41 as permitted sender) smtp.mailfrom=lucas.horri@jmc-aixmarseille.fr
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id t10sor10506793ioc.89.2019.03.25.02.48.51
+        for <business@jmc-aixmarseille.fr>
+        (Google Transport Security);
+        Mon, 25 Mar 2019 02:48:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of lucas.horri@jmc-aixmarseille.fr designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Received: by 2002:a5d:83d5:: with SMTP id u21mr16677270ior.303.1553507330706;
+ Mon, 25 Mar 2019 02:48:50 -0700 (PDT)
+MIME-Version: 1.0
+From: Lucas HORRI <lucas.horri@jmc-aixmarseille.fr>
+Date: Mon, 25 Mar 2019 10:48:38 +0100
+Message-ID: <CAA7rGSHn1zaoQEoO6jxGeeRHx55dSWAm8bmZHJ91=fbULmbWbg@mail.gmail.com>
+Subject: =?UTF-8?Q?=5BNOBIKE_=2D_JMC_AM=5D_D=C3=A9but_de_la_semaine_de_test_=28Sema?=
+	=?UTF-8?Q?ine_6=29_=28TEST_QUALIT=C3=89=2FSI=29?=
+To: =?UTF-8?Q?Syst=C3=A8me_d=27Information?= <si@jmc-aixmarseille.fr>, 
+	=?UTF-8?B?UXVhbGl0w6k=?= <qualite@jmc-aixmarseille.fr>
+Content-Type: multipart/alternative; boundary="0000000000009a68f20584e81c43"
+Bcc: business@jmc-aixmarseille.fr
+X-Original-Sender: lucas.horri@jmc-aixmarseille.fr
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@jmc-aixmarseille.fr header.s=google header.b=DC5AjfL0;
+       spf=pass (google.com: domain of lucas.horri@jmc-aixmarseille.fr
+ designates 209.85.220.41 as permitted sender) smtp.mailfrom=lucas.horri@jmc-aixmarseille.fr
+Precedence: list
+Mailing-list: list business@jmc-aixmarseille.fr; contact business+owners@jmc-aixmarseille.fr
+List-ID: <business.jmc-aixmarseille.fr>
+X-Spam-Checked-In-Group: business@jmc-aixmarseille.fr
+X-Google-Group-Id: 816861860855
+List-Post: <https://groups.google.com/a/jmc-aixmarseille.fr/group/business/post>,
+ <mailto:business@jmc-aixmarseille.fr>
+List-Help: <https://support.google.com/a/jmc-aixmarseille.fr/bin/topic.py?topic=25838>,
+ <mailto:business+help@jmc-aixmarseille.fr>
+List-Archive: <https://groups.google.com/a/jmc-aixmarseille.fr/group/business/>
+List-Unsubscribe: <mailto:googlegroups-manage+816861860855+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/jmc-aixmarseille.fr/group/business/subscribe>
+
+--0000000000009a68f20584e81c43
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+ NoBike_24_03_2019.apk
+<https://drive.google.com/a/jmc-aixmarseille.fr/file/d/1Og8wCDiXDyl8Gz9lY4p=
+dHWurYoaEwsDU/view?usp=3Ddrive_web>
+ CDC_NoBike_02_2019_JMCAM
+<https://docs.google.com/a/jmc-aixmarseille.fr/document/d/141Cbiv2rhjDQlG8C=
+Y37y5-yYChNfKI19ZpvCh8w8YPo/edit?usp=3Ddrive_web>
+
+Pour vos retours (une couleur par personne) :
+ CR_TEST_NoBike_03_2019_JMCAM
+<https://docs.google.com/a/jmc-aixmarseille.fr/document/d/18rh3gVcR7jrbIL1v=
+bNoLbilibIAmTftcafX5hFI7ucw/edit?usp=3Ddrive_web>
+
+Bonsoir la Qualit=C3=A9 et le SI,
+
+La semaine de test de NoBike vient de commencer, je vous transmets donc
+l'APK de l'application afin que vous puissiez la tester. Les tests =C3=A0 f=
+aire
+son principalement des tests fonctionnels et donc v=C3=A9rifier =C3=A9galem=
+ent que
+l'application correspond bien au cahier des charges.
+
+Pour information je referais une v=C3=A9rification post livraison avec Axel=
+,
+mais vous =C3=AAtes tous bienvenues pour tester l'application d'ici la fin =
+des
+tests.
+
+N'h=C3=A9sitez pas =C3=A0 me contacter pour toutes questions ou autres, je =
+vous
+remercie d'avance pour votre disponibilit=C3=A9 et votre soutien sur les te=
+sts.
+
+PS: Le build pour IOS viendra courant de la semaine.
+
+Cordialement,
+[image: JMCAM Signature Logo]
+*Lucas HORRI - Charg=C3=A9 d'Affaires*
+*Junior Miage Concept Aix-Marseille*
+lucas.horri@jmc-aixmarseille.fr
+06 26 27 16 18
+
+www.jmc-aixmarseille.fr
+
+--0000000000009a68f20584e81c43
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div class=3D"gmail_chip gmail_drive_chip" style=3D"width:=
+396px;height:18px;max-height:18px;background-color:#f5f5f5;padding:5px;colo=
+r:#222;font-family:arial;font-style:normal;font-weight:bold;font-size:13px;=
+border:1px solid #ddd;line-height:1"><a href=3D"https://drive.google.com/a/=
+jmc-aixmarseille.fr/file/d/1Og8wCDiXDyl8Gz9lY4pdHWurYoaEwsDU/view?usp=3Ddri=
+ve_web" target=3D"_blank" style=3D"display:inline-block;overflow:hidden;tex=
+t-overflow:ellipsis;white-space:nowrap;text-decoration:none;padding:1px 0px=
+;border:none;width:100%"><img style=3D"vertical-align: bottom; border: none=
+;" src=3D"https://drive-thirdparty.googleusercontent.com/16/type/applicatio=
+n/vnd.android.package-archive">=C2=A0<span dir=3D"ltr" style=3D"color:#15c;=
+text-decoration:none;vertical-align:bottom">NoBike_24_03_2019.apk</span></a=
+></div><div class=3D"gmail_chip gmail_drive_chip" style=3D"width:396px;heig=
+ht:18px;max-height:18px;background-color:#f5f5f5;padding:5px;color:#222;fon=
+t-family:arial;font-style:normal;font-weight:bold;font-size:13px;border:1px=
+ solid #ddd;line-height:1"><a href=3D"https://docs.google.com/a/jmc-aixmars=
+eille.fr/document/d/141Cbiv2rhjDQlG8CY37y5-yYChNfKI19ZpvCh8w8YPo/edit?usp=
+=3Ddrive_web" target=3D"_blank" style=3D"display:inline-block;overflow:hidd=
+en;text-overflow:ellipsis;white-space:nowrap;text-decoration:none;padding:1=
+px 0px;border:none;width:100%"><img style=3D"vertical-align: bottom; border=
+: none;" src=3D"https://drive-thirdparty.googleusercontent.com/16/type/appl=
+ication/vnd.google-apps.document">=C2=A0<span dir=3D"ltr" style=3D"color:#1=
+5c;text-decoration:none;vertical-align:bottom">CDC_NoBike_02_2019_JMCAM</sp=
+an></a></div><div><div><br></div><div>Pour vos retours (une couleur par per=
+sonne) : <br><div class=3D"gmail_chip gmail_drive_chip" style=3D"width:396p=
+x;height:18px;max-height:18px;background-color:#f5f5f5;padding:5px;color:#2=
+22;font-family:arial;font-style:normal;font-weight:bold;font-size:13px;bord=
+er:1px solid #ddd;line-height:1"><a href=3D"https://docs.google.com/a/jmc-a=
+ixmarseille.fr/document/d/18rh3gVcR7jrbIL1vbNoLbilibIAmTftcafX5hFI7ucw/edit=
+?usp=3Ddrive_web" target=3D"_blank" style=3D"display:inline-block;overflow:=
+hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:none;paddi=
+ng:1px 0px;border:none;width:100%"><img style=3D"vertical-align: bottom; bo=
+rder: none;" src=3D"https://drive-thirdparty.googleusercontent.com/16/type/=
+application/vnd.google-apps.document">=C2=A0<span dir=3D"ltr" style=3D"colo=
+r:#15c;text-decoration:none;vertical-align:bottom">CR_TEST_NoBike_03_2019_J=
+MCAM</span></a></div><br></div><div>Bonsoir la Qualit=C3=A9 et le SI,=C2=A0=
+</div><div><br></div><div>La semaine de test de NoBike vient de commencer, =
+je vous transmets donc l&#39;APK de l&#39;application afin que vous puissie=
+z la tester. Les tests =C3=A0 faire son principalement des tests fonctionne=
+ls et donc v=C3=A9rifier =C3=A9galement que l&#39;application correspond bi=
+en au cahier des charges.</div><div><br></div><div>Pour information je refe=
+rais une v=C3=A9rification post livraison avec Axel, mais vous =C3=AAtes to=
+us bienvenues pour tester l&#39;application d&#39;ici la fin des tests.</di=
+v><div><br></div><div>N&#39;h=C3=A9sitez pas =C3=A0 me contacter pour toute=
+s questions ou autres, je vous remercie d&#39;avance pour votre disponibili=
+t=C3=A9 et votre soutien sur les tests.</div><div><br></div><div>PS: Le bui=
+ld pour IOS viendra courant de la semaine.</div><div><br></div><div></div><=
+div>Cordialement,=C2=A0</div><div><div><div dir=3D"ltr" class=3D"m_69079933=
+93833293464m_4583674846544651000gmail_signature" data-smartmail=3D"gmail_si=
+gnature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr"><tabl=
+e style=3D"font-size:14px;color:rgb(39,39,40);font-family:-webkit-standard;=
+border-top:2px solid rgb(0,0,0)"><tbody><tr><td><img alt=3D"JMCAM Signature
+Logo" src=3D"http://images.jmc-aixmarseille.fr/jmcam_petit_email.png"></td>=
+<td><br><b>Lucas HORRI -=C2=A0Charg=C3=A9 d&#39;Affaires</b><div><i>Junior =
+Miage Concept Aix-Marseille</i></div><div><a href=3D"mailto:lucas.horri@jmc=
+-aixmarseille.fr" style=3D"color:rgb(17,85,204)" target=3D"_blank">lucas.ho=
+rri@jmc-aixmarseille.fr</a></div><div>06 26 27 16 18</div><br><div><a href=
+=3D"http://www.jmc-aixmarseille.fr/" style=3D"color:rgb(62,129,222)" target=
+=3D"_blank">www.jmc-aixmarseille.fr</a></div></td></tr></tbody></table></di=
+v></div></div></div></div></div></div></div></div></div>
+
+--0000000000009a68f20584e81c43--
