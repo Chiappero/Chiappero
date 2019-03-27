@@ -2,72 +2,13 @@ $(document).ready(function(){
     
     (function($) {
         "use strict";
-	/*
-	angular.module('indexApp', [])
-	.controller('indexController', function($scope, $http){
-	    var index = this; //edit = this module		
-		index.exportText="export to excel";
-	    pathURL="http://"+window.location.host+"/"+window.location.pathname.toString().split("/")[1];
-	    $scope.orderByField = 'element.dateCreation';
-	    $scope.reverseSort = true;
-	    	    
-	    index.getLastIMMP= function() {
-	    	$.post(pathURL+"/getLastIMMPServlet/", {},
-	    			function (data,status){
-	    				//console.log(JSON.parse(data));
-	    				index.immp=JSON.parse(data);
-	    	            $scope.$apply();
-	    	            //xconsole.log("y");
-		    			index.getIMMP(index.immp.id)
-	    			}, 'html');
-	    }
-	    index.exportExcel = function(id){
-    		index.exportText="processing";
-    		$.post(
-    				pathURL+"/downloadFileServlet?IMMPId="+id, {},
-    		        function (data, status) {
-    					//console.log(id);
-    					//console.log("file: "+data);
-    					array=data.split("\\");  //full filename split to get only the name and not the path   	
-    		    		history.exportText="export to excel";				
-    					window.open(pathURL+"/dataFileTransferServlet?filename="+array[array.length-1]);  //current url + servlet adress + filename 
-    					//console.log(pathURL+"/dataFileTransferServlet?filename="+array[array.length-1]);
-    					//history.text=" Download excel for immp "+id;
-    				    //history.isDivVisible="download";
-    					$scope.$apply();
-    				    //  window.open(data); //access refused
-    				}
-    			)
-    	}
 	    
-	*/
-    
     jQuery.validator.addMethod('answercheck', function (value, element) {
         return this.optional(element) || /^\bcat\b$/.test(value)
     }, "type the correct answer -_-");
         
         
-        /**** TODO : recaptcha code to transcript in js
-         if(isset($_POST['g-recaptcha-response'])){
-        $captcha=$_POST['g-recaptcha-response'];
-    }
-    else
-        $captcha = false;
-
-    if(!$captcha){
-        //Do something with error
-    }
-    else{
-        $secret = 'Your secret key here';
-        $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=
-            .$secret.&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
-        if($response.success==false)
-        {
-            //Do something with error
-        }
-    }
-... The Captcha is valid you can continue with the rest of your code
-
+        
 
 **/
     // validate contactForm form
@@ -145,3 +86,62 @@ $(document).ready(function(){
         
  })(jQuery)
 })
+
+angular.module('indexApp', [])
+.controller('indexController', function($scope, $http){
+    var index = this; //edit = this module	
+    /*	
+    index.exportText="export to excel";
+    pathURL="http://"+window.location.host+"/"+window.location.pathname.toString().split("/")[1];
+    $scope.orderByField = 'element.dateCreation';
+    $scope.reverseSort = true;
+*/
+    /**** TODO : recaptcha code to transcript in js */
+    if(isset($_POST['g-recaptcha-response'])){
+        $captcha=$_POST['g-recaptcha-response'];
+    }
+    else
+        $captcha = false;
+
+    if(!$captcha){
+        //Do something with error
+    }
+    else{
+        $secret = 'Your secret key here';
+        $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=
+            .$secret.&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
+        if($response.success==false)
+        {
+            //Do something with error
+        }
+    }
+... The Captcha is valid you can continue with the rest of your code
+/*
+    function() {
+        $.post(pathURL+"/getLastIMMPServlet/", {},
+                function (data,status){
+                    index.immp=JSON.parse(data);
+                    index.getIMMP(index.immp.id)
+                }, 'html');
+    }*/
+    /*
+    index.exportExcel = function(id){
+        index.exportText="processing";
+        $.post(
+                pathURL+"/downloadFileServlet?IMMPId="+id, {},
+                function (data, status) {
+                    //console.log(id);
+                    //console.log("file: "+data);
+                    array=data.split("\\");  //full filename split to get only the name and not the path   	
+                    history.exportText="export to excel";				
+                    window.open(pathURL+"/dataFileTransferServlet?filename="+array[array.length-1]);  //current url + servlet adress + filename 
+                    //console.log(pathURL+"/dataFileTransferServlet?filename="+array[array.length-1]);
+                    //history.text=" Download excel for immp "+id;
+                    //history.isDivVisible="download";
+                    $scope.$apply();
+                    //  window.open(data); //access refused
+                }
+            )
+    }*/
+}
+
