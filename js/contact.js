@@ -8,9 +8,6 @@ $(document).ready(function(){
     }, "type the correct answer -_-");
         
         
-        
-
-**/
     // validate contactForm form
     $(function() {
         $('#contactForm').validate({
@@ -90,6 +87,7 @@ $(document).ready(function(){
 angular.module('indexApp', [])
 .controller('indexController', function($scope, $http){
     var index = this; //edit = this module	
+    var g-recaptcha-response ="";
     /*	
     index.exportText="export to excel";
     pathURL="http://"+window.location.host+"/"+window.location.pathname.toString().split("/")[1];
@@ -97,8 +95,11 @@ angular.module('indexApp', [])
     $scope.reverseSort = true;
 */
     /**** TODO : recaptcha code to transcript in js */
-    if(isset($_POST['g-recaptcha-response'])){
-        $captcha=$_POST['g-recaptcha-response'];
+    
+    if(angular.isDefined(value)){
+        $.post(g-recaptcha-response, {},
+                function (data, status) {
+        captcha=$_POST['g-recaptcha-response'];
     }
     else
         $captcha = false;
