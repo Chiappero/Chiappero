@@ -96,10 +96,8 @@ angular.module('indexApp', [])
 */
     /**** TODO : recaptcha code to transcript in js */
     
-    if(angular.isDefined(value)){
-        $.post(g-recaptcha-response, {},
-                function (data, status) {
-        captcha=$_POST['g-recaptcha-response'];
+    if(isset($_POST['g-recaptcha-response'])){
+        $captcha=$_POST['g-recaptcha-response'];
     }
     else
         $captcha = false;
@@ -118,6 +116,12 @@ angular.module('indexApp', [])
     }
 ... The Captcha is valid you can continue with the rest of your code
 /*
+
+    if(angular.isDefined(value)){
+        $.post(g-recaptcha-response, {},
+                function (data, status) {
+    }
+
     function() {
         $.post(pathURL+"/getLastIMMPServlet/", {},
                 function (data,status){
