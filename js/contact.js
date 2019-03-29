@@ -84,7 +84,7 @@ $(document).ready(function(){
  })(jQuery)
 })
 
-angular.module('indexApp', [])
+angular.module('contactApp', [])
 .controller('indexController', function($scope, $http){
     var index = this; //edit = this module	
     var g-recaptcha-response ="";
