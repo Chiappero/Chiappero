@@ -1,0 +1,229 @@
+@charset "utf-8";
+/* CSS Document */
+
+/******************************
+
+[Table of Contents]
+
+1. Fonts
+2. Body and some general stuff
+3. Header
+4. Menu
+5. Content
+	5.1 Education
+
+
+******************************/
+
+
+.main_content_outer
+{
+	width: 100%;
+	height: 100%;
+	background: #f5f0f0;
+	overflow: hidden;
+}
+.general_info
+{
+	width: 473px;
+	height: 100%;
+	background: #100f3a;
+}
+.general_info_image
+{
+	width: 100%;
+	height: 473px;
+}
+.general_info_content
+{
+	width: 100%;
+	height: 100%;
+	padding-left: 77px;
+	padding-top: 49px;
+	padding-right: 15px;
+	padding-bottom: 20px;
+	overflow: hidden;
+}
+.general_info_content_inner
+{
+	width: 100%;
+	max-height: 100%;
+}
+.general_info_title
+{
+	font-size: 30px;
+	font-weight: 600;
+	color: #FFFFFF;
+	line-height: 1.2;
+}
+.general_info_list
+{
+	margin-top: 34px;
+}
+.general_info_list li:not(:last-child)
+{
+	margin-bottom: 15px;
+}
+.general_info_icon
+{
+	width: 21px;
+	height: 21px;
+	margin-right: 24px;
+}
+.general_info_icon img
+{
+	max-width: 100%;
+}
+.general_info_text,
+.general_info_text a
+{
+	font-size: 14px;
+	color: #7a798c;
+	line-height: 1.2;
+}
+.general_info_text a
+{
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.general_info_text a:hover
+{
+	color: #FFFFFF;
+}
+.general_info_text span
+{
+	color: #FFFFFF;
+}
+.social_container
+{
+	margin-top: 26px;
+	padding-left: 38px;
+}
+.social_container ul li:not(:last-child)
+{
+	margin-right: 28px;
+}
+.social_container ul li a i
+{
+	font-size: 18px;
+	color: #8d8b9b;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.social_container ul li a i:hover
+{
+	color: #FFFFFF;
+}
+.main_content
+{
+	width: calc(100% - 473px);
+	height: 100%;
+	padding-left: 82px;
+	padding-right: 30px;
+}
+.main_title_container
+{
+	width: 100%;
+	height: 183px;
+}
+.main_subtitle
+{
+	font-size: 18px;
+	font-weight: 500;
+	color: #7a798c;
+	line-height: 0.75;
+}
+.main_title
+{
+	font-size: 72px;
+	font-weight: 800;
+	color: #100f3a;
+	line-height: 0.75;
+	margin-top: 15px;
+	margin-left: -4px;
+}
+.main_content_scroll
+{
+	margin-top: 125px;
+	max-height: calc(100% - 183px - 125px);
+	padding-right: 100px;
+}
+.mCS-minimal.mCSB_scrollTools .mCSB_draggerRail, .mCS-minimal-dark.mCSB_scrollTools .mCSB_draggerRail
+{
+	background: #FFFFFF;
+}
+.mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+{
+	width: 3px;
+	background: #8583e1;
+}
+.mCSB_outside + .mCS-minimal.mCSB_scrollTools_vertical, .mCSB_outside + .mCS-minimal-dark.mCSB_scrollTools_vertical
+{
+	margin-top: 0;
+}
+
+/*********************************
+5.1 Education
+*********************************/
+
+.education
+{
+	width: 100%;
+	padding-bottom: 60px;
+}
+.edu_item
+{
+	padding-top: 9px;
+}
+.edu_item:not(:last-child)
+{
+	margin-bottom: 44px;
+}
+.edu_year
+{
+	width: 100px;
+	font-size: 24px;
+	font-weight: 700;
+	color: #8583e1;
+	line-height: 0.75;
+}
+.edu_image
+{
+	width: 90px;
+	height: 90px;
+	margin-top: -9px;
+}
+.edu_image img
+{
+	max-width: 100%;
+}
+.edu_content
+{
+	padding-left: 38px;
+}
+.edu_title
+{
+	font-size: 24px;
+	font-weight: 700;
+	color: #100f3a;
+	line-height: 0.75;
+}
+.edu_subtitle
+{
+	font-size: 16px;
+	font-weight: 600;
+	color: #838383;
+	margin-top: 7px;
+	padding-left: 1px;
+}
+.edu_text
+{
+	margin-top: 18px;
+	padding-left: 2px;
+}

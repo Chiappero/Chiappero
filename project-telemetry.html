@@ -38,6 +38,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<!-- Collect the nav links, forms, and other content for toggling -->
+						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
 								<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
@@ -46,11 +47,13 @@
 								<li class="nav-item submenu dropdown">
 									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
 									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-										<li class="nav-item"><a class="nav-link" href="portfolio-details.html">Project Details</a></li>
+										<li class="nav-item"><a class="nav-link" href="index.html#portfolio">Portfolio</a></li>
 										<li class="nav-item"><a class="nav-link" href="project-ppms.html">Airbus</a></li>
 										<li class="nav-item"><a class="nav-link" href="project-jmc.html">JMC</a></li>
-										<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+										<li class="nav-item"><a class="nav-link" href="project-reporting.html">Analytics</a></li>
+										<li class="nav-item"><a class="nav-link" href="project-cnrs.html">IoT</a></li>
+										<li class="nav-item"><a class="nav-link" href="project-telemetry.html">Cloud telemetry</a></li>
+										<li class="nav-item"><a class="nav-link" href="project-naval.html">IoT for defense</a></li>
 									</ul>
 								</li> <!--
 								<li class="nav-item submenu dropdown">
@@ -76,11 +79,11 @@
             	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
 				<div class="container">
 					<div class="banner_content text-center">
-						<h2>Project portfolio management suite</h2>
+						<h2>Cloud telemetry suite</h2>
 						<div class="page_link">
 							<a href="index.html">Home</a>
-							<a href="services.html">Portfolio</a>
-							<a href="services.html">project-ppms</a>
+							<a href="index.html#portfolio">Portfolio</a>
+							<a href="project-telemetry.html">project-telemetry</a>
                         </div>
 					</div>
 				</div>
@@ -95,34 +98,32 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="left_img">
-								<img class="img-fluid" src="img/projects/Airbus-1.jpg" alt="">
+								<img class="img-fluid" src="img/projects/gemalto-1.jpg" alt="">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="portfolio_right_text">
-								<h4>Project portfolio management suite</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                <h4>Cloud telemetry suite</h4>
 								<ul class="list">
 									<li><span>Rating</span>: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></li>
-									<li><span>Client</span>:  Airbus</li>
-                                    <li><span>Website</span>:<a href=http://www.airbus.com>  airbus.com</a></li>
-									<li><span>Completed</span>:  23 Aug 2018</li>
+									<li><span>Client</span>:  Gemalto</li>
+                                    <li><span>Website</span>:<a href=https://www.gemalto.com>  gemalto.com</a></li>
+									<li><span>Completed</span>:  31 july 2015</li>
 								</ul>
 							</div>
 						</div>
 					</div>
-       				<p>When I started working with Airbus Helicopters CIO in 2017 I was presented a situation where business where doing a quarterly expression of needs in order to book their budget for project demands, this was the only tool that was used to track needs and expenses by directorate, and it was done in a single excel file that was sent back and forth by email. </p>
-       				<p> I thought we could do much better, my tasks was to challenge the current position and propose a solution to monitor the projects from end to end.</p>
-                    <p>
-I identified the key actors and analysed their stakes and needs. I then designed an architecture based on web and cloud technologies, angularJS and J2EE webservices . The idea was to have a single database synchronized with SAP PPM in order to manage evolutions, track changes, drive operations on budget. The technologies were chosen to allow for portability and maintainability.</p><p>
-The development took less than three month, with frequent exchange with stakeholders to ensure their implication and satisfaction. As of today the product as received several very positive feedback from both business and IM users, it saves several working days to the department and allow for a better relationship with businesses. </p><p>
-This example is one of the many projects I have carried out, I would be happy to go into more detail in an interview.</p>
+                    <p>In late 2015 I was assigned a project by Gemalto bank and payment services.</p><p>
+They had several applications they were developing and often received customer demands for improvement and new functionalities. The several clients were expressing the needs and often asking for new development and functionalities. </p><p>  They soon needed to have an insight on whether or not the time and cost spend to develop those functionality had any actual customer value.</p><p> The project was to implement a telemetry system in their deliverables that would be able to respond to any kind of calls in the software, whether it is mouse click, button click, mouse hover or any workflow action. This local interface would store the telemetry information on a embedded H2 database and once in a while when it got an internet connection it would connect to the cloud hosted web service to upload the data in the cloud.</p><p> 
+The webservice was build in J2EE and opened several interfaces to retrieve the user’s data. It used basic intelligence to identify the user into several persona based on his activity. It could identify a designer, a consultant or a salesman.
+It was successfully integrated into the next release and has been in use since then, allowing for better piloting and savings
+</p>
         		</div>
         	</div>
         </section>
         <!--================End Portfolio Details Area =================-->
         
-        <!--================Footer Area =================-->
+   <!--================Footer Area =================-->
         <footer class="footer_area p_120">
         	<div class="container">
         		<div class="row footer_inner">
@@ -131,29 +132,15 @@ This example is one of the many projects I have carried out, I would be happy to
         					<div class="f_title">
         						<h3>About Me</h3>
         					</div>
-        					<p>Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills,</p>
+                            <p>Want to know more ? Feel free to <a href="contact.html" target="_blank">contact me</a></p> 
         					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Fabien Chiappero | Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 </p>
         				</aside>
         			</div>
         			<div class="col-lg-5 col-sm-6">
-        				<aside class="f_widget news_widget">
-        					<div class="f_title">
-        						<h3>Newsletter</h3>
-        					</div>
-        					<p>Stay updated with our latest trends</p>
-        					<div id="mc_embed_signup">
-                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
-                                	<div class="input-group d-flex flex-row">
-                                        <input name="EMAIL" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
-                                        <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>		
-                                    </div>				
-                                    <div class="mt-10 info"></div>
-                                </form>
-                            </div>
-        				</aside>
+        				
         			</div>
         			<div class="col-lg-2">
         				<aside class="f_widget social_widget">
@@ -162,10 +149,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         					</div>
         					<p>Let us be social</p>
         					<ul class="list">
-        						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-        						<li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/fabien-chiappero-084380ab/"><i class="fa fa-linkedin"></i></a></li>
+        						<li><a href="https://www.facebook.com/fabien.chiappero"><i class="fa fa-facebook"></i></a></li>
+        						<li><a href="https://twitter.com/FabienChiappero"><i class="fa fa-twitter"></i></a></li>
+        						<li><a href="https://www.instagram.com/fabienchiappero/"><i class="fa fa-instagram"></i></a></li>
+        						
         					</ul>
         				</aside>
         			</div>
