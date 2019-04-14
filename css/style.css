@@ -1530,6 +1530,11 @@ h5 {
 
 h6 {
   font-size: 14px; }
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+	background: linear-gradient(to right, #8490ff 0%, #62bdfc 70%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 
 .typography h1, .typography h2, .typography h3, .typography h4, .typography h5, .typography h6 {
   color: #777777; }
